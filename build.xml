@@ -1,0 +1,49 @@
+<project default="copy-local-snapshot">
+
+	<property environment="env" />
+
+    <condition property="params.set">
+        <and>
+            <isset property="library"/>
+            <isset property="version"/>
+        </and>
+    </condition>
+
+    <target name="check">
+        <fail unless="params.set">
+        Must specify the parameters: version
+        </fail>
+    </target>
+
+	<!-- ================================= 
+          target: copy-local-snapshot              
+         ================================= -->
+	<target name="copy-local-snapshot" depends="check">
+		<copy-local library="${library}" version="${version}" to="snapshots" />
+	</target>
+
+	<!-- = = = = = = = = = = = = = = = = =
+          macrodef: copy-local          
+         = = = = = = = = = = = = = = = = = -->
+	<macrodef name="copy-local">
+		<attribute name="library" />
+        <attribute name="version" />
+		<attribute name="to" />
+		<sequential>
+			<copy file="${env.PLAY_HOME}/repository/local/@{library}/@{library}_2.10/@{version}/jars/@{library}_2.10.jar" 
+			     tofile="@{to}/@{library}/@{library}_2.10/@{version}/@{library}_2.10-@{version}.jar" overwrite="true"/>
+            <copy file="${env.PLAY_HOME}/repository/local/@{library}/@{library}_2.10/@{version}/jars/@{library}_2.10.jar.md5" 
+                 tofile="@{to}/@{library}/@{library}_2.10/@{version}/@{library}_2.10-@{version}.jar.md5" overwrite="true"/>
+            <copy file="${env.PLAY_HOME}/repository/local/@{library}/@{library}_2.10/@{version}/jars/@{library}_2.10.jar.sha1" 
+                 tofile="@{to}/@{library}/@{library}_2.10/@{version}/@{library}_2.10-@{version}.jar.sha1" overwrite="true"/>
+
+			<copy file="${env.PLAY_HOME}/repository/local/@{library}/@{library}_2.10/@{version}/poms/@{library}_2.10.pom" 
+                 tofile="@{to}/@{library}/@{library}_2.10/@{version}/@{library}_2.10-@{version}.pom" overwrite="true"/>
+            <copy file="${env.PLAY_HOME}/repository/local/@{library}/@{library}_2.10/@{version}/poms/@{library}_2.10.pom.md5" 
+                 tofile="@{to}/@{library}/@{library}_2.10/@{version}/@{library}_2.10-@{version}.pom.md5" overwrite="true"/>
+            <copy file="${env.PLAY_HOME}/repository/local/@{library}/@{library}_2.10/@{version}/poms/@{library}_2.10.pom.sha1" 
+                 tofile="@{to}/@{library}/@{library}_2.10/@{version}/@{library}_2.10-@{version}.pom.sha1" overwrite="true"/>
+		</sequential>
+	</macrodef>
+
+</project>

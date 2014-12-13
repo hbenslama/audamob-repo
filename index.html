@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Maven-repo by hakandilek</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Maven-repo</h1>
+        <p>my humble maven repository</p>
+
+        <p class="view"><a href="https://github.com/hakandilek/maven-repo">View the Project on GitHub <small>hakandilek/maven-repo</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/hakandilek/maven-repo/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/hakandilek/maven-repo/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/hakandilek/maven-repo">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>maven-repo</h1>
+
+<p>my humble maven repository</p>
+
+<h2>for snapshots use:</h2>
+
+<pre><code>http://hakandilek.github.com/maven-repo/snapshots/
+</code></pre>
+
+<h2>for releases use:</h2>
+
+<pre><code>http://hakandilek.github.com/maven-repo/releases/
+</code></pre>
+
+<h2>with maven:</h2>
+
+<pre><code>&lt;repositories&gt;
+    &lt;repository&gt;
+        &lt;id&gt;hakandilek-maven-repo-snapshots&lt;/id&gt;
+        &lt;url&gt;http://hakandilek.github.com/maven-repo/snapshots/&lt;/url&gt;
+        &lt;releases&gt;
+            &lt;enabled&gt;false&lt;/enabled&gt;
+        &lt;/releases&gt;
+        &lt;snapshots&gt;
+            &lt;enabled&gt;true&lt;/enabled&gt;
+        &lt;/snapshots&gt;
+    &lt;/repository&gt;
+    &lt;repository&gt;
+        &lt;id&gt;hakandilek-maven-repo-releases&lt;/id&gt;
+        &lt;url&gt;http://hakandilek.github.com/maven-repo/releases/&lt;/url&gt;
+        &lt;releases&gt;
+            &lt;enabled&gt;true&lt;/enabled&gt;
+        &lt;/releases&gt;
+        &lt;snapshots&gt;
+            &lt;enabled&gt;false&lt;/enabled&gt;
+        &lt;/snapshots&gt;
+    &lt;/repository&gt;
+&lt;/repositories&gt;
+</code></pre>
+
+<h2>with play framework 2.0:</h2>
+
+<pre><code>val main = PlayProject(appName, appVersion, appDependencies, mainLang = JAVA).settings(
+    resolvers += "release repository" at  "http://hakandilek.github.com/maven-repo/releases/",
+    resolvers += "snapshot repository" at "http://hakandilek.github.com/maven-repo/snapshots/"
+)
+</code></pre>
+
+<h2>with play framework 2.1:</h2>
+
+<pre><code>val main = play.Project(appName, appVersion, appDependencies).settings (
+    resolvers += "release repository" at  "http://hakandilek.github.com/maven-repo/releases/",
+    resolvers += "snapshot repository" at "http://hakandilek.github.com/maven-repo/snapshots/"
+)
+</code></pre>
+
+<p>have fun!</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/hakandilek">hakandilek</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
