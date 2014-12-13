@@ -18,13 +18,13 @@
         <h1>Maven-repo</h1>
         <p>my humble maven repository</p>
 
-        <p class="view"><a href="https://github.com/hakandilek/maven-repo">View the Project on GitHub <small>hakandilek/maven-repo</small></a></p>
+        <p class="view"><a href="https://github.com/houssemSoat/audamob-repo">View the Project on GitHub <small>hakandilek/maven-repo</small></a></p>
 
 
         <ul>
-          <li><a href="https://github.com/hakandilek/maven-repo/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/hakandilek/maven-repo/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/hakandilek/maven-repo">View On <strong>GitHub</strong></a></li>
+          <li><a href="https://github.com/houssemSoat/audamob-repo/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/houssemSoat/audamob-repo/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/houssemSoat/audamob-repo">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
       <section>
@@ -34,12 +34,12 @@
 
 <h2>for snapshots use:</h2>
 
-<pre><code>http://hakandilek.github.com/maven-repo/snapshots/
+<pre><code>http://houssemSoat.github.com/audamob-repo/snapshots/
 </code></pre>
 
 <h2>for releases use:</h2>
 
-<pre><code>http://hakandilek.github.com/maven-repo/releases/
+<pre><code>http://houssemSoat.github.com/audamob-repo/releases/
 </code></pre>
 
 <h2>with maven:</h2>
@@ -47,7 +47,7 @@
 <pre><code>&lt;repositories&gt;
     &lt;repository&gt;
         &lt;id&gt;hakandilek-maven-repo-snapshots&lt;/id&gt;
-        &lt;url&gt;http://hakandilek.github.com/maven-repo/snapshots/&lt;/url&gt;
+        &lt;url&gt;http://houssemSoat.github.com/audamob-repo/snapshots/&lt;/url&gt;
         &lt;releases&gt;
             &lt;enabled&gt;false&lt;/enabled&gt;
         &lt;/releases&gt;
@@ -57,7 +57,7 @@
     &lt;/repository&gt;
     &lt;repository&gt;
         &lt;id&gt;hakandilek-maven-repo-releases&lt;/id&gt;
-        &lt;url&gt;http://hakandilek.github.com/maven-repo/releases/&lt;/url&gt;
+        &lt;url&gt;http://houssemSoat.github.com/audamob-repo/releases/&lt;/url&gt;
         &lt;releases&gt;
             &lt;enabled&gt;true&lt;/enabled&gt;
         &lt;/releases&gt;
@@ -71,16 +71,16 @@
 <h2>with play framework 2.0:</h2>
 
 <pre><code>val main = PlayProject(appName, appVersion, appDependencies, mainLang = JAVA).settings(
-    resolvers += "release repository" at  "http://hakandilek.github.com/maven-repo/releases/",
-    resolvers += "snapshot repository" at "http://hakandilek.github.com/maven-repo/snapshots/"
+    resolvers += "release repository" at  "http://houssemSoat.github.com/audamob-repo/releases/",
+    resolvers += "snapshot repository" at "http://houssemSoat.github.com/audamob-repo/snapshots/"
 )
 </code></pre>
 
 <h2>with play framework 2.1:</h2>
 
 <pre><code>val main = play.Project(appName, appVersion, appDependencies).settings (
-    resolvers += "release repository" at  "http://hakandilek.github.com/maven-repo/releases/",
-    resolvers += "snapshot repository" at "http://hakandilek.github.com/maven-repo/snapshots/"
+    resolvers += "release repository" at  "http://houssemSoat.github.com/audamob-repo/releases/",
+    resolvers += "snapshot repository" at "http://houssemSoat.github.com/audamob-repo/snapshots/"
 )
 </code></pre>
 
